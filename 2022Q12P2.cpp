@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 
-
 using namespace std;
 
 
@@ -101,9 +100,9 @@ int main () {
 
   pair<int, int> endCoords;
 
-  for (int i = 0; i < nRows; i += 1) {
+  for (int i = 0; i < nRows; i++) {
 
-    for (int j = 0; j < nCols; j += 1) {
+    for (int j = 0; j < nCols; j++) {
 
       if (lines[i][j] == 'S') {
 
