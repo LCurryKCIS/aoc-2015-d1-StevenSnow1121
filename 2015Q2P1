@@ -1,0 +1,85 @@
+import java.util.*;
+
+import java.util.ArrayList;
+
+
+
+class Main {
+
+    public static String in =  "";
+
+
+
+    public static void main(String[] args) {
+
+        Scanner s = new Scanner(System.in);
+
+        int total = 0;
+
+        while(true){
+
+            in = s.nextLine();
+
+            if(in.equals("exit")){
+
+                break;
+
+            }
+
+            int w = toInt();
+
+            int h = toInt();
+
+            int l = toInt();
+
+            int area = 2 * w * l + 2 * w * h + 2 * h * l;
+
+            ArrayList<Integer> li = new ArrayList<>();
+
+            li.add(l);
+
+            li.add(w);
+
+            li.add(h);
+
+            li.sort(Comparator.naturalOrder());
+
+            total += area + li.get(0) * li.get(1);
+
+        }
+
+        System.out.println(total);
+
+    }
+
+    public static int toInt(){
+
+        int i = 0;
+
+        String str = "";
+
+        while(!in.substring(i ,i + 1).equals("x")){
+
+            str += in.substring(i,i+1);
+
+            i++;
+
+            if(i == in.length() ){
+
+                break;
+
+            }
+
+        }
+
+        if(i != in.length()){
+
+            in = in.substring(i + 1);
+
+        }
+
+        return Integer.parseInt(str);
+
+    }
+
+}

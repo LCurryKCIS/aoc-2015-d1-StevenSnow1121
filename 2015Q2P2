@@ -1,0 +1,42 @@
+import java.util.*;
+
+class Main {
+    public static String in =  "";
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int total = 0;
+        while(true){
+            in = s.nextLine();
+            if(in.equals("exit")){
+                System.out.println(total);
+                break;
+            }
+            int w = toInt();
+            int l = toInt();
+            int h = toInt();
+            ArrayList<Integer> list = new ArrayList<>();
+            list.add(w);
+            list.add(l);
+            list.add(h);
+            list.sort(Comparator.naturalOrder());
+            total += w*l*h + 2 * (list.get(0) + list.get(1));
+        }
+
+
+    }
+    public static int toInt(){
+        int i = 0;
+        String str = "";
+        while(!in.substring(i ,i + 1).equals("x")){
+            str += in.substring(i,i+1);
+            i++;
+            if(i == in.length() ){
+                break;
+            }
+        }
+        if(i != in.length()){
+            in = in.substring(i + 1);
+        }
+        return Integer.parseInt(str);
+    }
+}
